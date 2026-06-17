@@ -15,7 +15,8 @@ Brief description of the changes and why they were made.
 
 ## Checklist
 
-- [ ] `CHANGELOG.md` updated
-- [ ] All tests pass
-- [ ] No regressions introduced
-- [ ] Follows project coding guidelines
+- [ ] I have tested my changes locally
+- [ ] I have updated documentation if needed
+- [ ] I have checked that this PR does not introduce breaking changes
+- [ ] I have added or updated tests if applicable
+- [ ] I have reviewed my changes before submitting
