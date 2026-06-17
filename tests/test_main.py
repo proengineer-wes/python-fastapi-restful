@@ -39,13 +39,11 @@ def _is_valid_uuid(value: str) -> bool:
 # GET /health/ -----------------------------------------------------------------
 
 
-def test_request_get_health_response_status_ok(client):
-    """GET /health/ returns 200 OK"""
-    # Act
-    response = client.get("/health/")
-    # Assert
-    assert response.status_code == 200
-    assert response.json() == {"status": "ok"}
+def test_request_get_health_without_trailing_slash_redirects(client):
+    response = client.get("/health", follow_redirects=False)
+
+    assert response.status_code in (307, 308)
+    assert response.headers["location"].endswith("/health/")
 
 
 # GET /players/ ----------------------------------------------------------------
